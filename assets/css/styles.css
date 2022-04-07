@@ -46,12 +46,13 @@ a {
     text-decoration: none;
 }
 
-    a#current {
-        color: black;
-    }
-    a:hover {
-        color: black;
-    }
+a#current {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
 
 .italics {
     font-style: italic;
@@ -63,7 +64,7 @@ a {
 
 .name a {
     color: #fff;
-    
+
 }
 
 /* p h3 h4 h5 h6 ul ol */
@@ -75,7 +76,7 @@ a {
 
 header {
     grid-area: h;
-    text-transform: uppercase;    
+    text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -84,15 +85,18 @@ header {
     position: fixed;
     z-index: 10;
 }
-    header img {
-            width: 200px;
-            /* height: 100%; */
-            padding: 0.5em;
-        }
+
+header img {
+    width: 200px;
+    /* height: 100%; */
+    padding: 0.5em;
+}
+
 main {
     padding-top: 5em;
     /* grid-area: a; */
 }
+
 footer {
     grid-area: f;
     background-color: #868686;
@@ -108,9 +112,10 @@ nav ul {
     display: flex;
     justify-content: flex-end;
 }
-    nav li {
-        padding: 1em;
-    }
+
+nav li {
+    padding: 1em;
+}
 
 
 /* || index */
@@ -121,19 +126,26 @@ nav ul {
     position: sticky;
     top: 0;
     z-index: -5;
-    
-    background: url(../images/hall1.jpeg);   
+
+    background: url(../images/hall1.jpeg);
     background-size: cover;
     background-position: center center;
 }
 
-    .index-hero-info {
-        width: 50%;
-        height: auto;
-        background-color: white;
-    }
+.index-hero-info {
+    width: 50%;
+    height: auto;
+    padding: 1em;
+    background-color: white;
 
-    /* .index-logo {
+    /*    BEN: make it relative to parent: sticky*/
+    position: relative;
+    left: 1em;
+    top: 40em;
+
+}
+
+/* .index-logo {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -144,7 +156,7 @@ nav ul {
     width: 60%;
     align-self: center; */
 
-    
+
 
 
 /* || gallery page */
@@ -159,13 +171,13 @@ nav ul {
     "gh gh gh gh gh gh gh gh gh gh gh gh"
     "gt gt gt gt gt gt gt gt gt gt gt gt"
     /* "gh gh gh gh gh gh gh gh gh gh gh gh" */
-    /* "f f f f f f f f f f f f"
+/* "f f f f f f f f f f f f"
     ; */
 
-    /* display: flex;
+/* display: flex;
     flex-direction: column; */
 
-    /* display: grid;
+/* display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
     "gh . ."
@@ -184,93 +196,109 @@ nav ul {
 
 .gallery-tiles {
     grid-area: gt;
-    /* display: flex; */
+
     display: grid;
+
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr 1fr;
+    /*    grid-template-rows: minmax(1fr 1fr);*/
+
 
     grid-template-areas:
-    /* "h h h h h h h h h h h h" */
-    "gh gh gh gh gh gh gh gh gh gh gh gh" 
-    "ba ba ba ba bb bb bb bb bh bh bh bh"
-    "bj bj bj bj bp bp bp bp bq bq bq bq"
+        "h h h h h h h h h h h h"
+        "gh gh gh gh gh gh gh gh gh gh gh gh"
+        "ba ba ba ba bb bb bb bb bh bh bh bh"
+        "bj bj bj bj bp bp bp bp bq bq bq bq"
     ;
 
-    /* grid-template-columns: 1fr, 1fr, 1fr; */
+
+    /*    grid-template-columns: 1fr, 1fr, 1fr;*/
 
 }
 
-    .box{
-        height: 20em;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 
-        .box.anthes {
-            background-image: url(../images/anthes1.jpeg);
-            background-size: cover;
-            background-position: center center;
-            grid-area: ba;
-            /* grid-column-start: 1;
+.box {
+    height: 20em;
+    width: 100%;
+
+}
+
+.name {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+/*BEN: make the anchor a box that grows to the whole size of the image */
+.box a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #fff;
+}
+
+.box a:hover {
+    color: #000000;
+}
+
+.box.anthes {
+    background-image: url(../images/anthes1.jpeg);
+    background-size: cover;
+    background-position: center center;
+    grid-area: ba;
+    /* grid-column-start: 1;
             grid-column-end: 5; */
-        }
+}
 
-        .box.booth {
-            background-image: url(../images/booth1.jpeg);
-            background-size: cover;
-            background-position: center bottom;
-            /* grid-column-start: 5;
+.box.booth {
+    background-image: url(../images/booth1.jpeg);
+    background-size: cover;
+    background-position: center bottom;
+    /* grid-column-start: 5;
             grid-column-end: 9; */
-            grid-area: bb;
+    grid-area: bb;
 
-        }
+}
 
-        .box.hall {
-            background-image: url(../images/hall1.jpeg);
-            background-size: cover;
-            background-position: center center;
-            /* grid-column-start: 9;
+.box.hall {
+    background-image: url(../images/hall1.jpeg);
+    background-size: cover;
+    background-position: center center;
+    /* grid-column-start: 9;
             grid-column-end: 13; */
-            grid-area: bh;
-        }
+    grid-area: bh;
+}
 
-        .box.johns {
-            background-image: url(../images/johns1.jpeg);
-            background-size: cover;
-            background-position: center bottom;
-            /* grid-column-start: 1;
+.box.johns {
+    background-image: url(../images/johns1.jpeg);
+    background-size: cover;
+    background-position: center bottom;
+    /* grid-column-start: 1;
             grid-column-end: 5; */
-            grid-area: bj;
-        }
+    grid-area: bj;
+}
 
-        .box.poliness {
-            background-image: url(../images/poliness1.jpeg);
-            background-size: cover;
-            background-position: center center;
-            /* grid-column-start: 5;
+.box.poliness {
+    background-image: url(../images/poliness1.jpeg);
+    background-size: cover;
+    background-position: center center;
+    /* grid-column-start: 5;
             grid-column-end: 9; */
-            grid-area: bp;
-        }
+    grid-area: bp;
+}
 
-        .box.quinlivan {
-            background-image: url(../images/quinlivan1.jpeg);
-            background-size: cover;
-            background-position: center center;
-            /* grid-column-start: 9;
+.box.quinlivan {
+    background-image: url(../images/quinlivan1.jpeg);
+    background-size: cover;
+    background-position: center center;
+    /* grid-column-start: 9;
             grid-column-end: 13; */
-            grid-area: bq;
-        }
+    grid-area: bq;
+}
 
-    .name {
-        /* display: none; */
-    }
 
-    .name:hover {
-        display:contents;
-    }
 
 
 /* || artist pages */
@@ -279,13 +307,13 @@ nav ul {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     /* grid-auto-rows: minmax(50px, auto); */
-    grid-template-areas: 
-    /* "h h h h h h h h h h h h" */
-    "a a a a a a a a a a a a"
-    "ah ah ah ah ah ah ah ah ah ah ah ah"
-    "ai ai ai ai ai ai ai ai ai ai ai ai"
-    "m m m m m m m . . ad ad ad"
-    /* "f f f f f f f f f f f f" */
+    grid-template-areas:
+        /* "h h h h h h h h h h h h" */
+        "a a a a a a a a a a a a"
+        "ah ah ah ah ah ah ah ah ah ah ah ah"
+        "ai ai ai ai ai ai ai ai ai ai ai ai"
+        "m m m m m m m . . ad ad ad"
+        /* "f f f f f f f f f f f f" */
 
 }
 
@@ -300,7 +328,7 @@ nav ul {
     /* margin-top: 1.5em; */
 }
 
-.artist-hero { 
+.artist-hero {
     width: 100%;
     height: 80vh;
     background-size: cover;
@@ -308,7 +336,7 @@ nav ul {
     margin-bottom: 1em;
 }
 
-    /* .arrow {
+/* .arrow {
         margin-top: 75vh;
         align-items: center;
     } */
@@ -323,30 +351,35 @@ nav ul {
 }
 
 /* | hero images */
-    .artist-hero.anthes {
-        background-image: url(../images/anthes1.jpeg);
-        background-position: center center;
-    }
-    .artist-hero.booth {
-        background-image: url(../images/booth1.jpeg);
-        background-position: center bottom;
-    }
-    .artist-hero.hall {
-        background-image: url(../images/hall1.jpeg);
-        background-position: center center;
-    }
-    .artist-hero.johns {
-        background-image: url(../images/johns1.jpeg);
-        background-position: center bottom;
-    }
-    .artist-hero.poliness {
-        background-image: url(../images/poliness1.jpeg);
-        background-position: center center;
-    }
-    .artist-hero.quinlivan {
-        background-image: url(../images/quinlivan1.jpeg);
-        background-position: center center;
-    }
+.artist-hero.anthes {
+    background-image: url(../images/anthes1.jpeg);
+    background-position: center center;
+}
+
+.artist-hero.booth {
+    background-image: url(../images/booth1.jpeg);
+    background-position: center bottom;
+}
+
+.artist-hero.hall {
+    background-image: url(../images/hall1.jpeg);
+    background-position: center center;
+}
+
+.artist-hero.johns {
+    background-image: url(../images/johns1.jpeg);
+    background-position: center bottom;
+}
+
+.artist-hero.poliness {
+    background-image: url(../images/poliness1.jpeg);
+    background-position: center center;
+}
+
+.artist-hero.quinlivan {
+    background-image: url(../images/quinlivan1.jpeg);
+    background-position: center center;
+}
 
 
 /* || donate */
@@ -356,6 +389,15 @@ form {
     padding: 2em;
 }
 
+.form-element {
+    margin-bottom: 1.5em;
+}
+
+/*BEN: make the label full width so you don't need br */
+label {
+    display: block;
+}
+
 input[type=text] {
     width: 50%;
     padding: 12px 20px;
@@ -363,13 +405,15 @@ input[type=text] {
     box-sizing: border-box;
     border: 1px solid #cecece;
     border-radius: 6px;
-  }
+}
 
-    input[type=text]:focus {
+input[type=text]:focus {
     border: 1px solid #555;
-    }
+}
 
-input[type=button], input[type=submit], input[type=reset] {
+input[type=button],
+input[type=submit],
+input[type=reset] {
     background-color: #000;
     border: none;
     color: white;
@@ -378,7 +422,7 @@ input[type=button], input[type=submit], input[type=reset] {
     margin: 40px 2px;
     cursor: pointer;
     border-radius: 6px;
-    }
+}
 
 
 
@@ -392,77 +436,80 @@ input[type=button], input[type=submit], input[type=reset] {
 .about-tile {
     width: 20%;
     height: auto;
-    background: #cecece;
+    /*    background: #cecece;*/
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*    justify-content: space-between;*/
     padding: 1em;
 }
 
-
+details {
+    background: #ccc;
+}
 
 /* media queries */
 
 @media (max-width: 42em) {
-    .artist{
-        grid-template-areas: 
-        /* "h h h h h h h h h h h h" */
-        "ah ah ah ah ah ah ah ah ah ah ah ah"
-        "ai ai ai ai ai ai ai ai ai ai ai ai"
-        "ad ad ad ad ad ad ad ad ad ad ad ad"
-        "m m m m m m m m m m m m"
-        /* "f f f f f f f f f f f f" */
+    .artist {
+        grid-template-areas:
+            /* "h h h h h h h h h h h h" */
+            "ah ah ah ah ah ah ah ah ah ah ah ah"
+            "ai ai ai ai ai ai ai ai ai ai ai ai"
+            "ad ad ad ad ad ad ad ad ad ad ad ad"
+            "m m m m m m m m m m m m"
+            /* "f f f f f f f f f f f f" */
     }
 
     h3 {
         font-size: 1.2em;
         margin-bottom: 1em;
     }
-    .gallery-tiles {    
+
+    .gallery-tiles {
         grid-template-areas:
-        /* "h h h h h h h h h h h h" */
-        "gh gh gh gh gh gh gh gh gh gh gh gh" 
-        "ba ba ba ba ba ba ba ba ba ba ba ba"
-        "bb bb bb bb bb bb bb bb bb bb bb bb"
-        "bh bh bh bh bh bh bh bh bh bh bh bh"
-        "bj bj bj bj bj bj bj bj bj bj bj bj"
-        "bp bp bp bp bp bp bp bp bp bp bp bp"
-        "bq bq bq bq bq bq bq bq bq bq bq bq"
-        /* "f f f f f f f f f f f f" */
+            /* "h h h h h h h h h h h h" */
+            "gh gh gh gh gh gh gh gh gh gh gh gh"
+            "ba ba ba ba ba ba ba ba ba ba ba ba"
+            "bb bb bb bb bb bb bb bb bb bb bb bb"
+            "bh bh bh bh bh bh bh bh bh bh bh bh"
+            "bj bj bj bj bj bj bj bj bj bj bj bj"
+            "bp bp bp bp bp bp bp bp bp bp bp bp"
+            "bq bq bq bq bq bq bq bq bq bq bq bq"
+            /* "f f f f f f f f f f f f" */
         ;
     }
-/*     
+
+    /*     
     .box{
         height: 20em;
         width: 100vw;
 } */
 
-@media (min-width: 42em) and (max-width: 60em){
-    .artist{
-        grid-template-areas: 
-        /* "h h h h h h h h h h h h" */
-        "ah ah ah ah ah ah ah ah ah ah ah ah"
-        "ai ai ai ai ai ai ai ai ai ai ai ai"
-        "m m m m m m m m ad ad ad ad"
-        /* "f f f f f f f f f f f f" */
-    }
+    @media (min-width: 42em) and (max-width: 60em) {
+        .artist {
+            grid-template-areas:
+                /* "h h h h h h h h h h h h" */
+                "ah ah ah ah ah ah ah ah ah ah ah ah"
+                "ai ai ai ai ai ai ai ai ai ai ai ai"
+                "m m m m m m m m ad ad ad ad"
+                /* "f f f f f f f f f f f f" */
+        }
 
-    .gallery-tiles {    
-        grid-template-areas:
-        /* "h h h h h h h h h h h h" */
-        "gh gh gh gh gh gh gh gh gh gh gh gh" 
-        "ba ba ba ba ba ba bb bb bb bb bb bb"
-        "bh bh bh bh bh bh bj bj bj bj bj bj"
-        "bp bp bp bp bp bp bq bq bq bq bq bq"
-        /* "f f f f f f f f f f f f" */
-        ;
-    }
+        .gallery-tiles {
+            grid-template-areas:
+                /* "h h h h h h h h h h h h" */
+                "gh gh gh gh gh gh gh gh gh gh gh gh"
+                "ba ba ba ba ba ba bb bb bb bb bb bb"
+                "bh bh bh bh bh bh bj bj bj bj bj bj"
+                "bp bp bp bp bp bp bq bq bq bq bq bq"
+                /* "f f f f f f f f f f f f" */
+            ;
+        }
 
-}
+    }
 
     /* @media (max-width: 42em) {
         .box{
             height: 10em;
     }
 } */
-    
